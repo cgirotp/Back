@@ -4,9 +4,11 @@ var cors = require('cors')
 
 var app = express()
 
+app.use(express.static('build'))
 app.use(express.json())
 app.use(morgan('tiny'))
 app.use(cors())
+
 
 let persons = [
     {
@@ -30,6 +32,10 @@ let persons = [
         number: "39-23-6423122"
     }
 ]
+
+app.get('/', (req, res) => {
+    res.send('<h1>Hello World!</h1>')
+})
 
 app.get('/api/persons', (request, response) => {
   response.json(persons)
