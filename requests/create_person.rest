@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/persons
+POST https://powerful-beach-84023.herokuapp.com/api/persons
 Content-type: application/json
 
 {
